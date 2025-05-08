@@ -125,16 +125,10 @@ const mailtoLink = document.querySelector("[data-mailto-link]");
 formBtn.setAttribute("disabled", "");
 
 // add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+formInputs.forEach((input) => {
+  input.addEventListener("input", function () {
     // Check if all form fields have data
-    let allFieldsFilled = true;
-    for (let j = 0; j < formInputs.length; j++) {
-      if (formInputs[j].value.trim() === "") {
-        allFieldsFilled = false;
-        break;
-      }
-    }
+    const allFieldsFilled = Array.from(formInputs).every((input) => input.value.trim() !== "");
 
     // Enable or disable the button based on the form validation
     if (allFieldsFilled) {
@@ -143,7 +137,7 @@ for (let i = 0; i < formInputs.length; i++) {
       formBtn.setAttribute("disabled", "");
     }
   });
-}
+});
 
 // add event to the form's submit button
 formBtn.addEventListener("click", function () {
@@ -152,7 +146,7 @@ formBtn.addEventListener("click", function () {
   const message = document.querySelector("[name='message']").value;
 
   // construct the mailto link
-  const mailtoLink = `mailto:brianmarques1999@gmail.com?subject=Message From Website%20message%20from%20your%20website&body=Name:%20${name}%0AMessage:%20${message}`;
+  const mailtoLink = `mailto:brianmarques1999@gmail.com?subject=%20Message%20from%20your%20Website&body=Name:%20${name}%0AMessage:%20${message}`;
 
   // update the href attribute of the mailto link
   document.querySelector("[data-mailto-link]").setAttribute("href", mailtoLink);
