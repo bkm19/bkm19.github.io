@@ -121,11 +121,23 @@ const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 const mailtoLink = document.querySelector("[data-mailto-link]");
 
+// Disable the button by default
+formBtn.setAttribute("disabled", "");
+
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
-    // check form validation
-    if (form.checkValidity()) {
+    // Check if all form fields have data
+    let allFieldsFilled = true;
+    for (let j = 0; j < formInputs.length; j++) {
+      if (formInputs[j].value.trim() === "") {
+        allFieldsFilled = false;
+        break;
+      }
+    }
+
+    // Enable or disable the button based on the form validation
+    if (allFieldsFilled) {
       formBtn.removeAttribute("disabled");
     } else {
       formBtn.setAttribute("disabled", "");
