@@ -1057,7 +1057,7 @@
 
                     <h3 class="h3 form-title">Contact Form</h3>
 
-                    <form action="send_email.php" class="form" data-form method="post">
+                    <form class="form" class="form" data-form></form>
 
                         <div class="input-wrapper">
                             <input type="text" name="fullname" class="form-input" placeholder="Full name" required
@@ -1070,11 +1070,20 @@
                         <textarea name="message" class="form-input" placeholder="Your Message" required
                             data-form-input></textarea>
 
+                        <button class="form-btn" type="button" data-form-btn>
+                            <a href="#" class="mailto-link" data-mailto-link>
+                                <ion-icon name="paper-plane"></ion-icon>
+                                <span>Send Message</span>
+                            </a>
+                        </button>
+                        <!--
+                        
                         <button class="form-btn" type="submit" disabled data-form-btn>
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
                         </button>
-
+                        -->
+                        
                     </form>
 
                 </section>

@@ -119,34 +119,7 @@ for (let i = 0; i < filterBtn.length; i++) {
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to the form's "submit" event
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // prevent default form submission
-
-  // disable the form button
-  formBtn.setAttribute("disabled", "");
-
-  // send the form data using AJAX
-  fetch("send_email.php", {
-    method: "POST",
-    body: new FormData(form),
-  })
-    .then(function (response) {
-      // enable the form button
-      formBtn.removeAttribute("disabled");
-
-      // reset the form
-      form.reset();
-    })
-    .catch(function (error) {
-      // enable the form button
-      formBtn.removeAttribute("disabled");
-
-      // handle the error
-      console.error("Error sending the form:", error);
-    });
-});
+const mailtoLink = document.querySelector("[data-mailto-link]");
 
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
@@ -159,6 +132,20 @@ for (let i = 0; i < formInputs.length; i++) {
     }
   });
 }
+
+// add event to the form's submit button
+formBtn.addEventListener("click", function () {
+  // get the user's input
+  const name = document.querySelector("[name='fullname']").value;
+  const message = document.querySelector("[name='message']").value;
+
+  // construct the mailto link
+  const mailtoLink = `mailto:brianmarques1999@gmail.com?subject=Message From Website%20message%20from%20your%20website&body=Name:%20${name}%0AMessage:%20${message}`;
+
+  // update the href attribute of the mailto link
+  document.querySelector("[data-mailto-link]").setAttribute("href", mailtoLink);
+});
+
 
 
 
