@@ -114,35 +114,23 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 const mailtoLink = document.querySelector("[data-mailto-link]");
 
-// Disable the button by default
-formBtn.setAttribute("disabled", "");
-
 // add event to all form input field
-formInputs.forEach((input) => {
-  input.addEventListener("input", function () {
-    // Check if all form fields have data
-    let allFieldsFilled = true;
-    formInputs.forEach((input) => {
-      if (input.value.trim() === "") {
-        allFieldsFilled = false;
-      }
-    });
-
-    // Enable or disable the button based on the form validation
-    if (allFieldsFilled) {
-      formBtn.querySelector("a").removeAttribute("disabled");
+for (let i = 0; i < formInputs.length; i++) {
+  formInputs[i].addEventListener("input", function () {
+    // check form validation
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
     } else {
-      formBtn.querySelector("a").setAttribute("disabled", "");
+      formBtn.setAttribute("disabled", "");
     }
   });
-});
+}
 
 // add event to the form's submit button
 formBtn.addEventListener("click", function () {
