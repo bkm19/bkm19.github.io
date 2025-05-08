@@ -128,13 +128,18 @@ formBtn.setAttribute("disabled", "");
 formInputs.forEach((input) => {
   input.addEventListener("input", function () {
     // Check if all form fields have data
-    const allFieldsFilled = Array.from(formInputs).every((input) => input.value.trim() !== "");
+    let allFieldsFilled = true;
+    formInputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        allFieldsFilled = false;
+      }
+    });
 
     // Enable or disable the button based on the form validation
     if (allFieldsFilled) {
-      formBtn.removeAttribute("disabled");
+      formBtn.querySelector("a").removeAttribute("disabled");
     } else {
-      formBtn.setAttribute("disabled", "");
+      formBtn.querySelector("a").setAttribute("disabled", "");
     }
   });
 });
