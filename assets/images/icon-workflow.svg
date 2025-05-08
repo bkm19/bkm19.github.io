@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <path d="M128 192h80v0c13.255 0 24-10.745 24-24s-10.745-24-24-24h-80c-13.255 0-24 10.745-24 24s10.745 24 24 24z" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M336 160l48-32-48-32-48 32 48 32z" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M336 192v96" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M336 336v48" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M336 384h-96" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M192 384h-64" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M128 384v-96" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <path d="M128 288h96" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <circle cx="128" cy="160" r="24" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <circle cx="336" cy="336" r="24" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+  <circle cx="336" cy="208" r="24" fill="none" stroke="#f0ad4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+</svg>
