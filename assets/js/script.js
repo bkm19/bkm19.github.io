@@ -120,17 +120,43 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
+// add event to the form's "submit" event
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // prevent default form submission
+
+  // disable the form button
+  formBtn.setAttribute("disabled", "");
+
+  // send the form data using AJAX
+  fetch("send_email.php", {
+    method: "POST",
+    body: new FormData(form),
+  })
+    .then(function (response) {
+      // enable the form button
+      formBtn.removeAttribute("disabled");
+
+      // reset the form
+      form.reset();
+    })
+    .catch(function (error) {
+      // enable the form button
+      formBtn.removeAttribute("disabled");
+
+      // handle the error
+      console.error("Error sending the form:", error);
+    });
+});
+
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
-
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
     } else {
       formBtn.setAttribute("disabled", "");
     }
-
   });
 }
 
