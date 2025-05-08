@@ -2,6 +2,14 @@
   #style.css
 \*-----------------------------------*/
 
+/* ADDED BY ME
+*/
+.circular-image {
+  border-radius: 50%;
+  object-fit: cover; /* Add this */
+  height: 80px; /* Ensure height matches width */
+  width: 80px;
+}
 
 /**
  * copyright 2022 @codewithsadee
